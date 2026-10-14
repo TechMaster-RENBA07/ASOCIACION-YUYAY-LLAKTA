@@ -1,0 +1,21 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+ul, ol { list-style: none; }
+
+h1, h2, h3, h4 { font-family: var(--fuente-titulo); font-weight: 600; line-height: 1.2; }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Figura 4 - Evidencia por dimensión</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    background: #FFFFFF;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .canvas {
+    width: 1100px;
+    background: #FFFFFF;
+  }
+  .title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 30px;
+    letter-spacing: 0.3px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  /* Caja izquierda: variable independiente */
+  .variable-box {
+    width: 210px;
+    background: #2E75B6;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 22px 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.35;
+    box-shadow: 0 2px 6px rgba(46,117,182,0.25);
+    flex-shrink: 0;
+  }
+  .variable-box small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 8px;
+    opacity: 0.9;
+    font-style: italic;
+  }
+  /* Zona de flechas */
+  .arrows {
+    width: 110px;
+    position: relative;
+    height: 480px;
+    flex-shrink: 0;
+  }
+  .arrow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: #70AD47;
+  }
+  .arrow::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #70AD47;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+  .arrow.red { background: #C0504D; }
+  .arrow.red::after { border-left-color: #C0504D; }
+  /* Cajas de dimensiones */
+  .dimensions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .dim {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid #D9D9D9;
+    background: #FAFAFA;
+  }
+  .dim-name {
+    width: 110px;
+    background: #1F4E79;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 6px;
+    flex-shrink: 0;
+  }
+  .dim-content {
+    flex: 1;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .row-intl {
+    font-size: 12px;
+    color: #2F5496;
+    line-height: 1.35;
+  }
+  .row-intl::before {
+    content: '✓ ';
+    color: #70AD47;
+    font-weight: 700;
+  }
+  .row-tarapoto {
+    font-size: 12px;
+    color: #9C3B3B;
+    line-height: 1.35;
+  }
+  .row-tarapoto::before {
+    content: '✗ ';
+    color: #C0504D;
+    font-weight: 700;
+  }
+  /* Leyenda */
+  .legend {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 12px;
+    color: #444;
+  }
+  .legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+  .dot.green { background: #70AD47; }
+  .dot.red { background: #C0504D; }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="title">Relación entre expresión gráfica ambiental y las dimensiones de la conciencia ecológica</div>
+
+  <div class="container">
+    <!-- Caja variable independiente -->
+    <div class="variable-box">
+      Expresión gráfica ambiental
+      <small>(variable independiente)</small>
+    </div>
+
+    <!-- Zona de flechas -->
+    <div class="arrows">
+      <div class="arrow" style="top: 55px;"></div>
+      <div class="arrow" style="top: 172px;"></div>
+      <div class="arrow" style="top: 289px;"></div>
+      <div class="arrow red" style="top: 406px;"></div>
+    </div>
+
+    <!-- Cajas de dimensiones -->
+    <div class="dimensions">
+      <div class="dim">
+        <div class="dim-name">Cognitiva</div>
+        <div class="dim-content">
+          <div class="row-intl">Comunicación efectiva de datos científicos complejos (Kaufmann et al., 2023). Aumento de la apropiación del conocimiento (Montes Buelvas y Amézquita López, 2024).</div>
+          <div class="row-tarapoto">No se identificó medición del aprendizaje asociado a expresión gráfica en Tarapoto.</div>
+        </div>
+      </div>
+
+      <div class="dim">
+        <div class="dim-name">Afectiva</div>
+        <div class="dim-content">
+          <div class="row-intl">Efecto sobre las emociones y la memoria (Kaufmann et al., 2023). Visitantes conmovidos y mayor tangibilidad de la crisis (PNUD, 2024).</div>
+          <div class="row-tarapoto">El mural de Miguel Correa expresa intención emotiva (Diario Voces, 2025); no se reporta medición de su efecto.</div>
+        </div>
+      </div>
+
+      <div class="dim">
+        <div class="dim-name">Conativa</div>
+        <div class="dim-content">
+          <div class="row-intl">Mayor probabilidad de cambiar el comportamiento (Kaufmann et al., 2023). Comprensión de los beneficios de cambiar prácticas (PNUD, 2024).</div>
+          <div class="row-tarapoto">La conciencia ambiental explica el 69 % de la conducta ecológica en Sauce, sin relación con expresión gráfica (Navarro Mendoza, 2018).</div>
+        </div>
+      </div>
+
+      <div class="dim">
+        <div class="dim-name">Activa</div>
+        <div class="dim-content">
+          <div class="row-intl">Defensa y resignificación de zonas verdes y renaturalización (Montes Buelvas y Amézquita López, 2024). Nuevas acciones en el entorno (Kaufmann et al., 2023).</div>
+          <div class="row-tarapoto">Conductas sostenibles regulares en 57 % de estudiantes (Terrones Malca y Dionisio Cieza, 2025) y participación de 97.5 % y 69.8 % en segregación (Tapia Calderón, 2025), sin vínculo con expresión gráfica.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><div class="dot green"></div> Evidencia que vincula expresión gráfica con la dimensión</span>
+    <span><div class="dot red"></div> Sin medición en Tarapoto</span>
+  </div>
+</div>
+
+</body>
+</html>

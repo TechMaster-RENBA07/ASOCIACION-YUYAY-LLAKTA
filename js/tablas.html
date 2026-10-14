@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Figura 2 - Participación y residuos</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<style>
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .card {
+    width: 480px;
+    padding: 20px;
+  }
+  h3 {
+    text-align: center;
+    color: #1F2937;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.3px;
+  }
+  .footnote {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h3>Participación ciudadana (%)</h3>
+  <canvas id="g1" height="260"></canvas>
+</div>
+
+<div class="card">
+  <h3>Residuos recolectados (kg)</h3>
+  <canvas id="g2" height="260"></canvas>
+</div>
+
+<div class="footnote">Elaboración propia a partir de Tapia Calderón (2025)</div>
+
+<script>
+Chart.register(ChartDataLabels);
+
+const labels = ['Partido Alto', 'Suchiche'];
+const COLORS = ['#2E75B6', '#70AD47'];
+const BORDERS = ['#1F4E79', '#507E32'];
+
+// ---------- Gráfico 1: Participación ----------
+new Chart(document.getElementById('g1'), {
+  type: 'bar',
+  data: {
+    labels: labels,
+    datasets: [{
+      data: [97.5, 69.8],
+      backgroundColor: COLORS,
+      borderColor: BORDERS,
+      borderWidth: 1.5,
+      borderRadius: 4,
+      barPercentage: 0.55,
+      categoryPercentage: 0.7
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    layout: { padding: { top: 30, right: 10, left: 10, bottom: 0 } },
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false },
+      datalabels: {
+        anchor: 'end',
+        align: 'top',
+        offset: 4,
+        color: '#1F2937',
+        font: { family: 'Calibri', size: 14, weight: 'bold' },
+        formatter: v => v + ' %'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 110,
+        ticks: {
+          stepSize: 20,
+          color: '#555',
+          font: { size: 12, family: 'Calibri' },
+          callback: v => v + ' %'
+        },
+        grid: { color: '#EAEAEA', drawBorder: false }
+      },
+      x: {
+        grid: { display: false },
+        ticks: {
+          color: '#333',
+          font: { size: 13, family: 'Calibri', weight: '600' }
+        }
+      }
+    }
+  }
+});
+
+// ---------- Gráfico 2: Residuos ----------
+new Chart(document.getElementById('g2'), {
+  type: 'bar',
+  data: {
+    labels: labels,
+    datasets: [{
+      data: [880, 631],
+      backgroundColor: COLORS,
+      borderColor: BORDERS,
+      borderWidth: 1.5,
+      borderRadius: 4,
+      barPercentage: 0.55,
+      categoryPercentage: 0.7
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    layout: { padding: { top: 30, right: 10, left: 10, bottom: 0 } },
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false },
+      datalabels: {
+        anchor: 'end',
+        align: 'top',
+        offset: 4,
+        color: '#1F2937',
+        font: { family: 'Calibri', size: 14, weight: 'bold' },
+        formatter: v => v + ' kg'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 1000,
+        ticks: {
+          stepSize: 100,
+          color: '#555',
+          font: { size: 12, family: 'Calibri' },
+          callback: v => v + ' kg'
+        },
+        grid: { color: '#EAEAEA', drawBorder: false }
+      },
+      x: {
+        grid: { display: false },
+        ticks: {
+          color: '#333',
+          font: { size: 13, family: 'Calibri', weight: '600' }
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

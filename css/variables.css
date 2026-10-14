@@ -1,0 +1,38 @@
+:root {
+  /* Colores — paleta andina/artesanal */
+  --color-fondo:        #faf6f0;
+  --color-fondo-alt:    #f3ebe0;
+  --color-superficie:   #ffffff;
+  --color-texto:        #3a2a22;
+  --color-texto-suave:  #6b5648;
+
+  --color-primario:     #b85c38;   /* terracota */
+  --color-primario-osc: #8f3f22;
+  --color-secundario:   #5c6b4a;   /* verde oliva */
+  --color-acento:       #d4a373;   /* ocre */
+  --color-borde:        #e6d9c8;
+
+  /* Tipografía */
+  --fuente-titulo: 'Cormorant Garamond', serif;
+  --fuente-cuerpo: 'Poppins', system-ui, sans-serif;
+
+  /* Espaciados */
+  --esp-xs: 0.5rem;
+  --esp-sm: 1rem;
+  --esp-md: 2rem;
+  --esp-lg: 4rem;
+  --esp-xl: 6rem;
+
+  /* Bordes */
+  --radio-sm: 8px;
+  --radio-md: 16px;
+  --radio-lg: 24px;
+
+  /* Sombras */
+  --sombra-sm: 0 2px 8px rgba(58, 42, 34, 0.06);
+  --sombra-md: 0 8px 24px rgba(58, 42, 34, 0.10);
+  --sombra-lg: 0 16px 40px rgba(58, 42, 34, 0.15);
+
+  /* Transiciones */
+  --transicion: 0.3s ease;
+}

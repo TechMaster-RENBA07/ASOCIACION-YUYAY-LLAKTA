@@ -1,0 +1,30 @@
+@media (max-width: 900px) {
+  .nosotros__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .nav { gap: 1.2rem; }
+  .nav__link { font-size: 0.85rem; }
+}
+
+@media (max-width: 640px) {
+  .header__inner { padding: 0.75rem 0; }
+  .logo__titulo { font-size: 1.1rem; }
+  .nav__link:not(.nav__link--cta) { display: none; }
+
+  .hero { min-height: 90vh; padding: 5rem 0 3rem; }
+  .hero__botones { flex-direction: column; }
+  .hero__botones .btn { text-align: center; }
+
+  .seccion { padding: 4rem 0; }
+
+  .grid-productos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+  .producto__cuerpo { padding: 1.1rem; }
+  .producto__nombre { font-size: 1rem; }
+  .producto__precio { font-size: 1.2rem; }
+
+  .footer__inner { justify-content: center; text-align: center; }
+}
